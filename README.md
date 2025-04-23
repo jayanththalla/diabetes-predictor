@@ -1,17 +1,4 @@
-Absolutely! Below is a full `README.md` file tailored for a project called **Diabetes Predictor** that includes:
 
-- ✅ Project overview
-- 🔧 Setup instructions (with installation commands)
-- 🚀 Features
-- 📊 ML Models used
-- 💡 Health info and diabetes types
-- 📁 Example project structure
-
-Assuming you're using Python + a simple ML backend (e.g., Flask or Streamlit) — but let me know if it’s a different stack like React, Django, etc., and I’ll tweak it accordingly.
-
----
-
-```markdown
 # 🧠 Diabetes Predictor
 
 **Predict Diabetes Risk With AI Precision**  
@@ -31,7 +18,7 @@ A powerful machine learning application that provides real-time diabetes risk as
 
 ## 💻 Tech Stack
 
-- **Backend**: Python, Flask / Streamlit
+- **Backend**: Python, Flask 
 - **ML Models**: Scikit-learn (SVM, Random Forest, Logistic Regression, Gradient Boosting)
 - **Frontend**: HTML/CSS/JS or Streamlit
 - **Data Visualization**: Matplotlib / Plotly / Seaborn
@@ -145,7 +132,7 @@ diabetes-predictor/
 ## 📬 Contact & Feedback
 
 Have suggestions or issues?  
-📧 Email us at: [support@diabetespredictor.com](mailto:support@diabetespredictor.com)
+📧 Email us at: [jayanththalla33@gmail.com](mailto:jayanththalla33@gmail.com)
 
 ---
 
@@ -154,11 +141,9 @@ Have suggestions or issues?
 © 2025 Diabetes Predictor. All rights reserved.  
 This project is licensed under the MIT License.
 
----
 
 ## 🌟 Acknowledgements
 
 Special thanks to the open-source community and health researchers who made this project possible.
 
-```
 
