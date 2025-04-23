@@ -6,10 +6,8 @@ import os
 
 app = Flask(__name__)
 
-# Simpler CORS configuration
-CORS(app, origins=["http://localhost:5173", "https://diabetes-predictor-oj1b.onrender.com"],
-     allow_headers=["Content-Type"],
-     methods=["POST", "OPTIONS", "GET"])
+# Allow all origins for development
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 # Get the absolute path to the models directory
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))

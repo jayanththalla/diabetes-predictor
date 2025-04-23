@@ -68,7 +68,11 @@ const PredictionPage = () => {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                    'Access-Control-Allow-Origin': '*'
                 },
+                mode: 'cors',
+                credentials: 'omit',
                 body: JSON.stringify({
                     pregnancies: parseFloat(formData.pregnancies),
                     glucose: parseFloat(formData.glucose),
@@ -81,11 +85,12 @@ const PredictionPage = () => {
                 })
             });
 
-            const data = await response.json();
-
             if (!response.ok) {
-                throw new Error(data.error || 'Failed to make prediction');
+                const errorData = await response.json().catch(() => ({}));
+                throw new Error(errorData.error || `HTTP error! status: ${response.status}`);
             }
+
+            const data = await response.json();
 
             // Generate recommendations based on the model's prediction
             let riskLevel;
