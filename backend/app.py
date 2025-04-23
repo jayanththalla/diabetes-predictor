@@ -7,9 +7,9 @@ import os
 app = Flask(__name__)
 
 # Simpler CORS configuration
-CORS(app, origins=["http://localhost:5173"],
+CORS(app, origins=["http://localhost:5173", "https://diabetes-predictor-oj1b.onrender.com"],
      allow_headers=["Content-Type"],
-     methods=["POST", "OPTIONS"])
+     methods=["POST", "OPTIONS", "GET"])
 
 # Get the absolute path to the models directory
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -27,6 +27,15 @@ except Exception as e:
     print(f"Error loading models: {str(e)}")
     raise
 
+@app.route('/', methods=['GET'])
+def index():
+    return jsonify({
+        'status': 'API is running',
+        'endpoints': {
+            '/diagnosis/<model_name>': 'POST - Get diabetes prediction using specified model'
+        },
+        'available_models': list(models.keys())
+    })
 
 @app.route('/diagnosis/<model_name>', methods=['POST'])
 def diagnosis(model_name):
