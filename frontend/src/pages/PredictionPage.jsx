@@ -64,7 +64,7 @@ const PredictionPage = () => {
         setIsLoading(true);
 
         try {
-            const response = await fetch(`http://localhost:5000/diagnosis/${selectedClassifier}`, {
+            const response = await fetch(`https://diabetes-predictor-oj1b.onrender.com/diagnosis/${selectedClassifier}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
